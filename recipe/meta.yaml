@@ -1,6 +1,7 @@
 {% set name = "edgartools" %}
 {% set version = "4.35.0" %}
 
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
