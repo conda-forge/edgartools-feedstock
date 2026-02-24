@@ -1,5 +1,5 @@
 {% set name = "edgartools" %}
-{% set version = "5.16.1" %}
+{% set version = "5.17.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/edgartools-{{ version }}.tar.gz
-  sha256: 842fc6fdd8a3c52fede9b5f2cc0724cfc7be70c56cf38a9596ad8b4f7a764971
+  sha256: c45f764e089715abb399449c15b43752100d85b43b4aa82f2dc55152b4866c26
 
 build:
   noarch: python
