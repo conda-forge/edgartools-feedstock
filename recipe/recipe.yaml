@@ -1,26 +1,29 @@
-{% set name = "edgartools" %}
-{% set version = "5.57.0" %}
+schema_version: 1
+
+context:
+  name: edgartools
+  version: "5.57.0"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/edgartools-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/edgartools-${{ version }}.tar.gz
   sha256: 2ed5b3e2416369f1667eb81167d5ac71cc508e0bdd57e92cb94c0742f147614a
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatchling >=1.26.3
     - pip
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - httpx >=0.25.0
     - pandas >=2.0.0
     - tabulate >=0.9.0
@@ -42,22 +45,23 @@ requirements:
     - httpxthrottlecache >=0.3.0
     - truststore >=0.9.0
 
-test:
-  imports:
-    - edgar
-  commands:
-    - pip check
-  requires:
-    - python {{ python_min }}
-    - pip
+tests:
+  - python:
+      imports:
+        - edgar
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
 
 about:
   summary: Navigate Edgar filings with ease
-  home: https://github.com/dgunning/edgartools
-  dev_url: https://github.com/dgunning/edgartools
   license: MIT
   license_file: LICENSE.txt
+  homepage: https://github.com/dgunning/edgartools
+  repository: https://github.com/dgunning/edgartools
 
 extra:
   recipe-maintainers:
     - faceprint
+
