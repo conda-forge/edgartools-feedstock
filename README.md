@@ -191,4 +191,5 @@ Feedstock Maintainers
 =====================
 
 * [@faceprint](https://github.com/faceprint/)
+* [@jsmolic](https://github.com/jsmolic/)
 
