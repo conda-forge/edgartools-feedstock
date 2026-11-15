@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: edgartools
-  version: "6.1.0"
+  version: "6.2.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/edgartools-${{ version }}.tar.gz
-  sha256: 6d2104e582179106ee169b17fd8d78ac855b40ac7e92dbe73e24191c57864f95
+  sha256: 2321d60752e1db75f90dbcb2919db866173e0573d82df076f1a4e505c4ee223c
 
 build:
   number: 0
