@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: edgartools
-  version: "6.2.0"
+  version: "6.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/edgartools-${{ version }}.tar.gz
-  sha256: 2321d60752e1db75f90dbcb2919db866173e0573d82df076f1a4e505c4ee223c
+  sha256: b9ee5d4d8969b1ccf91c7e5e7c73432ac9c75493174a8d95ec08ed5931831bbe
 
 build:
   number: 0
@@ -25,28 +25,23 @@ requirements:
   run:
     - python >=${{ python_min }}
     - anyascii >=0.3.3
-    - httpx2 >=2.13.1,<3
-    - pandas >=2.2.2
-    - tabulate >=0.9.0
-    - pyarrow >=23.0.1
-    - beautifulsoup4 >=4.10.0
-    - lxml >=6.1.3
-    - rich >=13.8.0
+    - httpx2 <3,>=2.13.1
+    - httpxthrottlecache >=0.6.1
     - humanize >=4.0.0
-    - stamina >=24.2.0
+    - jinja2 >=3.1.6
+    - lxml >=6.1.3
     - orjson >=3.11.6
-    - textdistance >=4.5.0
+    - pandas >=2.2.2
+    - pyarrow >=23.0.1
+    - pydantic >=2.4.0
+    - pyrate-limiter >=4.0.0
     - rank-bm25 >=0.2.1
     - rapidfuzz >=3.5.0
-    - unidecode >=1.2.0
-    - pydantic >=2.4.0
+    - rich >=13.8.0
+    - stamina >=24.2.0
+    - tabulate >=0.9.0
     - tqdm >=4.66.3
-    - nest-asyncio >=1.5.1
-    - jinja2 >=3.1.6
-    - httpxthrottlecache >=0.6.1
     - truststore >=0.9.0
-    - pyrate-limiter >=4.0.0
-    - certifi >=2026.10.19
 
 tests:
   - python:
