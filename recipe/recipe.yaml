@@ -26,7 +26,7 @@ requirements:
     - python >=${{ python_min }}
     - anyascii >=0.3.3
     - httpx2 <3,>=2.13.1
-    - httpxthrottlecache [httpx2]>=0.6.1
+    - httpxthrottlecache >=0.6.1
     - humanize >=4.0.0
     - jinja2 >=3.1.6
     - lxml >=6.1.3
